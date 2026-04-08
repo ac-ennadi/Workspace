@@ -6,11 +6,20 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:11 by acennadi          #+#    #+#             */
-/*   Updated: 2026/03/30 11:29:12 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 15:51:34 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+
+//this classes
+
+class aboy {
+    public:
+        std::string name;
+        int age;
+};
 
 //the namespace
 
