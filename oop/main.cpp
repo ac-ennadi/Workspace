@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:05 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 16:13:48 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:53:43 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int main()
 	// endl();
 	// room2::someone();
 	//this for class
-	aboy p1;
-	aboy p2;
+	aboy p1("steve", 18);
+	aboy p2("achraf", 21);
 
-	p1.name = "steve";
-	p1.age = 18;
+	// p1.name = "steve";
+	// p1.age = 18;
 
-	p2.name = "achraf";
-	p2.age = 21;
+	// p2.name = "achraf";
+	// p2.age = 21;
 	
 	std::cout << "Name: " << p1.name;
 	endl();
