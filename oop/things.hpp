@@ -6,12 +6,14 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:11 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 16:14:09 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:17:10 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+
+///NOTE : Don't Forget to Comment the part u didn't working with
 
 //this classes
 
