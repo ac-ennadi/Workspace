@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:11 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 15:51:34 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:14:09 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class aboy {
     public:
         std::string name;
         int age;
+    //member function is a function declared as a member of a class
+    void print_it();
 };
 
 //the namespace

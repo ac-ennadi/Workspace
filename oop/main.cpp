@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:05 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 16:01:10 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:13:48 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ int main()
 	std::cout << "Name: " << p1.name;
 	endl();
 	std::cout << "Age: " << p1.age;
+	endl();
+	p1.print_it();
 	
 	endl();
 
 	std::cout << "Name: " << p2.name;
 	endl();
 	std::cout << "Age: " << p2.age;
+	endl();
+	p2.print_it();
 	return (0);
 }
