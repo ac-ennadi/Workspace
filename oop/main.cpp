@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:05 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 16:53:43 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 17:05:55 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main()
 	// room1::someone();
 	// endl();
 	// room2::someone();
-	//this for class
+	
+	//this for class and some fundamental
 	aboy p1("steve", 18);
 	aboy p2("achraf", 21);
 

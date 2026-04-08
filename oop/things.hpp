@@ -6,7 +6,7 @@
 /*   By: acennadi <acennadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 11:29:11 by acennadi          #+#    #+#             */
-/*   Updated: 2026/04/08 16:56:40 by acennadi         ###   ########.fr       */
+/*   Updated: 2026/04/08 17:05:51 by acennadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ class aboy {
         std::string name;
         int age;
     //member function is a function declared as a member of a class
-    void print_it();
+    
+    //Constructor
     aboy (std::string name, int age);
+    //Destructor
+    ~aboy();
+    void print_it();
 };
 
 //the namespace
@@ -32,9 +36,9 @@ class aboy {
 // we can solve the problem of name conflex
 
 namespace room1 {
-    void someone (void) {std::cout << "i am here";}
+    void someone (void);
 };
 
 namespace room2 {
-    void someone (void) {std::cout << "i am here";}
+    void someone (void);
 };
