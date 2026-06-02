@@ -1,19 +1,22 @@
 #include <iostream>
-#include <cstdlib>
+#include <ostream>
+
 
 int main()
 {
-    int x = 7;
+    int index = 5;
+    const int size = 5;
+    int arr[size] = {0, 22, 44, 66, 88};
 
     try {
-        if (x % 2 != 0)
-            throw "its unpair Value";
+            if (index > 4)
+                throw "invalid index";
+            std::cout << "arr[" << index << "]: " << arr[index] << std::endl;
+
     }
     catch (const char *str)
     {
-        std::cout << "exception : " << str << std::endl;
-        exit(0);
+        std::cout << str << std::endl;
     }
-    std::cout << "the program Work correctly" << std::endl;
-    return 0;
-}
+    return (0);
+} 
