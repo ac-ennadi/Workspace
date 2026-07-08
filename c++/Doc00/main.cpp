@@ -1,5 +1,9 @@
 #include <iostream>
+#include <string>
 
+// private: Members can only be accessed from inside the class itself. 
+//             External code cannot see or change them.
+// public: Members can be accessed from anywhere outside the class.
 
 // class -> Blue Print
 class Person
@@ -12,12 +16,15 @@ class Person
     public: //->> this is the public keyword
         //methods -->> functions
         void PrintFullName();
-        void SetFullName(std::string fname, std::string sname);
+        std::string GetfullName(); //getter
+        void SetFullName(std::string fname, std::string sname); //  Setters
 };
 
 void Person::SetFullName(std::string fname, std::string sname) {(*this).fname = fname; this->sname = sname;}
 
-void Person::PrintFullName() {std::cout << fname << " " << sname << std::endl;}
+void Person::PrintFullName()    {std::cout << fname << " " << sname << std::endl;}
+
+std::string Person::GetfullName()   {return fname + "" + sname;}
 
 int main()
 {
