@@ -15,6 +15,8 @@ class Person
         std::string sname;
     public: //->> this is the public keyword
         //methods -->> functions
+        Person(); //this is the default constractor
+        Person(std::string fname, std::string sname): fname(fname), sname(sname){} //this is the custom  constractor
         void PrintFullName();
         std::string GetfullName(); //getter
         void SetFullName(std::string fname, std::string sname); //  Setters
@@ -30,11 +32,10 @@ int main()
 {
     // instances == object -> Creating instances of the class 'person'
     // Interacting == create an object from a class 
-    Person person;
+    Person person("Achraf", "ennadiri");
     Person person1;
 
     // Interacting -> Interacting with the instances
-    person.SetFullName("Hamza", "kadir");
     person.PrintFullName();
     person.SetFullName("achraf", "ennadiri");
     person.PrintFullName();
