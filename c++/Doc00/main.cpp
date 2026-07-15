@@ -1,12 +1,17 @@
 #include <iostream>
 #include <string>
 
-// Encapsulation
+/* Encapsulation
 
-// private: Members can only be accessed from inside the class itself. 
-//             External code cannot see or change them.
-// public: Members can be accessed from anywhere outside the class.
+ access specifiers:
+ private: Members can only be accessed from inside the class itself. 
+             External code cannot see or change them.
+             
+ public: Members can be accessed from anywhere outside the class.
 
+protected: allows a derived class to access the private members
+
+*/
 // class -> Blue Print
 
 //parent class (base class) --> inherited from
@@ -14,7 +19,7 @@ class Person
 {
     //data members -->> varibles
     //thos are a member fuctions and variable c --->> attribute
-    private:
+    protected: //it was private:
         std::string fname;
         std::string sname;
     public: //->> this is the public keyword
@@ -44,7 +49,7 @@ class Someone : public Person
         void    getInfo();
 };
 
-void Someone::getInfo() {std::cout << "Full Name: " << GetfullName() << std::endl << "Departement: " << Departement << std::endl;};
+void Someone::getInfo() {std::cout << "firstName: " << fname << std::endl << "lastName: " << sname << std::endl << "Departement: " << Departement << std::endl;};
 
 int main()
 {
