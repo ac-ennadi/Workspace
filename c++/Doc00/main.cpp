@@ -27,7 +27,7 @@ class Person
         Person() = default; // U can use 'Person() {}' this is the default constractor
         Person(std::string fname, std::string sname): fname(fname), sname(sname){} //this is the custom  constractor
         void PrintFullName();
-        std::string getInfo() virtual; //getter
+        std::string getInfo(); //getter
         void SetFullName(std::string fname, std::string sname); //  Setters
 };
 
@@ -46,7 +46,7 @@ class Someone : public Person
         std::string Departement;
     public:
         Someone (std::string FirstName, std::string LastName, std::string Departement) : Person(FirstName, LastName), Departement(Departement){}
-        void    getInfo() override ;
+        void    getInfo();
 };
 
 void Someone::getInfo()  {std::cout << "firstName: " << fname << std::endl << "lastName: " << sname << std::endl << "Departement: " << Departement << std::endl;};
