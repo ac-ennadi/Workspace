@@ -27,7 +27,7 @@ class Person
         Person() = default; // U can use 'Person() {}' this is the default constractor
         Person(std::string fname, std::string sname): fname(fname), sname(sname){} //this is the custom  constractor
         void PrintFullName();
-        virtual void getInfo(); //getter
+        virtual void getInfo() ; //getter
         /* virtual tell the compiler this function can
         be replaced with the similer function in the child class */
         void SetFullName(std::string fname, std::string sname); //  Setters
