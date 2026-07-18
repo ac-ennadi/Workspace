@@ -27,7 +27,9 @@ class Person
         Person() = default; // U can use 'Person() {}' this is the default constractor
         Person(std::string fname, std::string sname): fname(fname), sname(sname){} //this is the custom  constractor
         void PrintFullName();
-        std::string getInfo(); //getter
+        virtual void getInfo(); //getter
+        /* virtual tell the compiler this function can
+        be replaced with the similer function in the child class */
         void SetFullName(std::string fname, std::string sname); //  Setters
 };
 
@@ -36,7 +38,7 @@ void Person::SetFullName(std::string fname, std::string sname) {(*this).fname = 
 
 void Person::PrintFullName()    {std::cout << fname << " " << sname << std::endl;}
 
-std::string Person::getInfo()   {return fname + " " + sname;}
+void Person::getInfo()   {std::cout << "first name: " << fname << std::endl << "last name: " << sname << std::endl;}
 //inheritance
 
 //child class (derived class) 
@@ -46,7 +48,9 @@ class Someone : public Person
         std::string Departement;
     public:
         Someone (std::string FirstName, std::string LastName, std::string Departement) : Person(FirstName, LastName), Departement(Departement){}
-        void    getInfo();
+        void    getInfo() override; 
+        /* override tell the compiler this this function can
+        override the similer function in the parent class */
 };
 
 void Someone::getInfo()  {std::cout << "firstName: " << fname << std::endl << "lastName: " << sname << std::endl << "Departement: " << Departement << std::endl;};
@@ -56,7 +60,8 @@ int main()
     // instances == object -> Creating instances of the class 'person'
     // Interacting == create an object from a class 
     Person someone("hamzaaa", "hamzoooo");
-    std::cout << someone.getInfo() << std::endl;
+    someone.getInfo();
+
     Someone person("achraf", "ennadiri", "1337");
     person.getInfo();
     // Interacting -> Interacting with the instances
