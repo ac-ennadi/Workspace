@@ -22,6 +22,11 @@ class Cat : public Animals {
 void Cat::animalsound() {std::cout << "cat make a sound!\n";}
 
 
+/*
+    Static type of a = Animal* (this is what the compiler sees at compile time)
+    Dynamic type of a = Dog (this is the actual object it points to at runtime) 
+*/
+
 int main()
 {
     Animals animal;
@@ -31,5 +36,13 @@ int main()
     animal.animalsound();
     dog.animalsound();
     cat.animalsound();
+
+    Animals *a;
+    Dog b;
+
+    //a now point to the object of dog
+    a = &b;
+    a->animalsound();
+
     return 0;
 }
