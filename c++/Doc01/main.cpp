@@ -60,7 +60,7 @@ int main()
     Animals p1;
     p1.number = 22;
     std::cout << "p1: " << p1.number << std::endl;
-    Animals p2 = p1;
+    Animals p2 = p1; //here we call The copy constructor
     std::cout << "p2: " << p2.number << std::endl;
     return 0;
 }
