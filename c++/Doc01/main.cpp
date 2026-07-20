@@ -1,4 +1,5 @@
 # include <iostream>
+#include <ostream>
 
 class Animals {
     public:
@@ -42,6 +43,8 @@ int main()
 
     //a now point to the object of dog
     a = &b;
+    std::cout << "Adrr of a:" << *&a << std::endl; // drefernce of adderss of the "a"
+    std::cout << "Adrr of b:" << &b << std::endl;   //address of b
     a->animalsound();
 
     return 0;
