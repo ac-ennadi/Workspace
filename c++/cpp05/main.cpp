@@ -1,1 +1,6 @@
-//for save this
+#include "Bureaucrat.hpp"
+
+int main()
+{
+    return (0);
+}
