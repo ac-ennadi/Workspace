@@ -3,9 +3,16 @@
 
 class Animals {
     public:
+        int number;
         virtual void animalsound();
+        Animals() = default;
+        Animals(const Animals &other);
+        ~Animals();
 };
 
+Animals::Animals(const Animals &other)  {number = other.number + 1;
+    std::cout << "copy constractor has been called\n";}
+Animals::~Animals() {std::cout << "Deconstractor has been called\n";}
 void Animals::animalsound() {std::cout << "animal make a sound!\n";}
 
 class Dog : public Animals {
@@ -47,5 +54,10 @@ int main()
     std::cout << "Adrr of b:" << &b << std::endl;   //address of b
     a->animalsound();
 
+    Animals p1;
+    p1.number = 22;
+    std::cout << "p1: " << p1.number << std::endl;
+    Animals p2 = p1;
+    std::cout << "p2: " << p2.number << std::endl;
     return 0;
 }
