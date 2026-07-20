@@ -5,8 +5,11 @@ class Animals {
     public:
         int number;
         virtual void animalsound();
+        //  default constructor
         Animals() = default;
+        //  copy constructor
         Animals(const Animals &other);
+        //  Deconstractor
         ~Animals();
 };
 
