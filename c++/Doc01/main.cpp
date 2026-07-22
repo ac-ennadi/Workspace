@@ -1,5 +1,19 @@
 # include <iostream>
+#include <new>
 #include <ostream>
+
+class Something 
+{
+    public:
+        int *number;
+    Something(int set_n) {
+        number = new int(1);
+        *number = set_n;
+    }
+    ~Something(){
+        delete(number);
+    }
+};
 
 class Animals {
     public:
@@ -15,6 +29,7 @@ class Animals {
 
 Animals::Animals(const Animals &other)  {number = other.number + 1;
     std::cout << "copy constractor has been called\n";}
+
 Animals::~Animals() {std::cout << "Deconstractor has been called\n";}
 void Animals::animalsound() {std::cout << "animal make a sound!\n";}
 
@@ -62,5 +77,8 @@ int main()
     std::cout << "p1: " << p1.number << std::endl;
     Animals p2 = p1; //here we call The copy constructor
     std::cout << "p2: " << p2.number << std::endl;
+
+    /// shallow copy and a deep copy in C++ 
+    Something Something(10); 
     return 0;
 }
