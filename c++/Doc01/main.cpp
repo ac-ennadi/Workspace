@@ -7,9 +7,16 @@ class Something
     public:
         int *number;
     Something(int set_n) {
-        number = new int(1);
+        number = new int();
         *number = set_n;
     }
+
+    Something(Something &other_obj)
+    {
+        number = new int();
+        *number = *other_obj.number;
+    }
+
     ~Something(){
         delete(number);
     }
@@ -79,6 +86,11 @@ int main()
     std::cout << "p2: " << p2.number << std::endl;
 
     /// shallow copy and a deep copy in C++ 
-    Something Something(10); 
+    Something something(10); 
+    Something something2 = something;
+
+    std::cout << "1st OB: " << *something.number << std::endl;
+    *something2.number = 44;
+    std::cout << "2st OB: " << *something2.number << std::endl;
     return 0;
 }
