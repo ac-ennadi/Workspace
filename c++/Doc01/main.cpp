@@ -1,25 +1,21 @@
 # include <iostream>
-#include <new>
-#include <ostream>
+# include <ostream>
 
 class Something 
 {
     public:
         int *number;
-    Something(int set_n) {
-        number = new int();
-        *number = set_n;
-    }
+    
+    Something(int set_n) {number = new int(set_n);}
 
-    Something(Something &other_obj)
+    Something(Something &other_obj) {number = new int(*other_obj.number);}
+
+    Something operator+(const Something &other)
     {
-        number = new int();
-        *number = *other_obj.number;
+        return (*Something::number + *other.number);
     }
 
-    ~Something(){
-        delete(number);
-    }
+    ~Something(){delete(number);}
 };
 
 class Animals {
@@ -85,12 +81,14 @@ int main()
     Animals p2 = p1; //here we call The copy constructor
     std::cout << "p2: " << p2.number << std::endl;
 
-    /// shallow copy and a deep copy in C++ 
+    /// shallow copy and deep copy in C++ 
     Something something(10); 
     Something something2 = something;
 
     std::cout << "1st OB: " << *something.number << std::endl;
     *something2.number = 44;
     std::cout << "2st OB: " << *something2.number << std::endl;
+    Something sm3 = something + something2;
+    std::cout << "value of sm: " << *sm3.number << std::endl;
     return 0;
 }
