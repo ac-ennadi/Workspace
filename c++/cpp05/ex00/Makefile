@@ -1,16 +1,17 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Bureaucrat
-SRC = Bureaucrat.hpp main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp
+HEADERFILE = Bureaucrat.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(HEADERFILE) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
