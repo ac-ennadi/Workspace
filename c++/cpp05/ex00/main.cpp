@@ -5,13 +5,20 @@
 
 using namespace std;
 
+class new_exceptiom : public exception
+{
+    virtual const char *what() const noexcept {
+            return "new_exceptiom\n";
+    }
+};
+
 int main()
 {
     string str = "achraf";
 
-
     try
     {
+        throw new_exceptiom();
         throw 55;
         throw runtime_error("i just create this one\n");
         std::cout << str.at(9) << endl;
