@@ -21,7 +21,7 @@ int main()
         throw 55;
         throw runtime_error("i just create this one\n");
         std::cout << str.at(9) << endl;
-        int *ptr  = new int[999999999999999999];
+        int *ptr  = new int[99999999999999999];
     }
     catch (out_of_range &e)
     {
