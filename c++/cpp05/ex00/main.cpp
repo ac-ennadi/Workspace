@@ -1,6 +1,5 @@
 #include <exception>
 # include <iostream>
-#include <new>
 #include <stdexcept>
 # include "Bureaucrat.hpp"
 
