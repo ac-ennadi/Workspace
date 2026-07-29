@@ -13,6 +13,7 @@ int main()
 
     try
     {
+        throw runtime_error("i just create this one\n");
         std::cout << str.at(9) << endl;
         int *ptr  = new int[999999999999999999];
     }
@@ -25,6 +26,6 @@ int main()
     {
         cout << "excption: " << e.what() << endl;
     }
-    
+
     return (0);
 }
