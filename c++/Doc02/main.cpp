@@ -1,7 +1,6 @@
 #include <exception>
 # include <iostream>
 #include <stdexcept>
-# include "Bureaucrat.hpp"
 
 using namespace std;
 
