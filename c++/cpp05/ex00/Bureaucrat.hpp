@@ -1,22 +1,41 @@
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
+#include <exception>
+#include <iostream>
 #include <string>
 
 class Bureaucrat {
-    private:
-        const std::string Name;
-        int Grade;
+private:
+    const std::string name;
+    int grade;
+    static const int highest = 1;
+    static const int lowest = 150;
+
+public:
+    class GradeTooHighException : public std::exception {
     public:
-        Bureaucrat();
-        Bureaucrat(const int Grade, const std::string Name);
-        Bureaucrat(const Bureaucrat &other);
-        Bureaucrat operator<<(const Bureaucrat &other);
-        ~Bureaucrat();
+        virtual const char* what() const throw();
+    };
 
-        int getGrade();
-        std::string getName();
-        void incrementGrade();
-        void decrementGrade();
+    class GradeTooLowException : public std::exception {
+    public:
+        virtual const char* what() const throw();
+    };
 
-        void GradeTooHighException();
-        void GradeTooLowException();
+    Bureaucrat();
+    Bureaucrat(const std::string &name, int grade);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat &operator=(const Bureaucrat &other);
+    ~Bureaucrat();
 
+    const std::string &getName() const;
+    int getGrade() const;
+
+    void incrementGrade();
+    void decrementGrade();
 };
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
+
+#endif
