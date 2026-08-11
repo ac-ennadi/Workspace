@@ -1,5 +1,3 @@
-# include <exception>
-# include <iostream>
 # include "Bureaucrat.hpp"
 
 int main()

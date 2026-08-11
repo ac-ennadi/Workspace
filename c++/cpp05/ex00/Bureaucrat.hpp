@@ -4,6 +4,7 @@
 #include <exception>
 #include <string>
 #include <ostream>
+#include <iostream>
 
 class Bureaucrat {
     private:
