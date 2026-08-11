@@ -1,25 +1,19 @@
+# include <exception>
 # include <iostream>
 # include "Bureaucrat.hpp"
 
 int main()
 {
-    try {
-        Bureaucrat a("Alice", 2);
-        std::cout << a << std::endl;
-        a.incrementGrade(); // becomes 1
-        std::cout << a << std::endl;
-        a.incrementGrade(); // should throw
-    } catch (const std::exception &e) {
-        std::cout << "exception: " << e.what() << std::endl;
-    }
+   try{
+      Bureaucrat p1("achraf", 150);
 
-    try {
-        Bureaucrat b("Bob", 150);
-        std::cout << b << std::endl;
-        b.decrementGrade(); // should throw
-    } catch (const std::exception &e) {
-        std::cout << "exception: " << e.what() << std::endl;
-    }
-
-    return 0;
+      std::cout << p1 << std::endl;
+      p1.decrementGrade();
+      std::cout << "Name: " << p1.getName() << std::endl << "grade: " << p1.getGrade() << std::endl;
+   }
+   catch (std::exception &e)
+   {
+      std::cout << "The Catched exception: " << e.what() << std::endl;
+   }
+   return (0);
 }

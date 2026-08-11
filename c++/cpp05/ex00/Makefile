@@ -8,7 +8,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CPP) $(CPPFLAGS) $(HEADERFILE) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@

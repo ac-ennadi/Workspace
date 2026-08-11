@@ -1,64 +1,46 @@
 #include "Bureaucrat.hpp"
+#include <iostream>
 
-// ------------------ Constructors / Destructor ------------------
-Bureaucrat::Bureaucrat() : name("Default"), grade(lowest) {}
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade)
-	: name(name), grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade)
 {
-	if (grade < highest)
+	if (this->grade < highest)
 		throw GradeTooHighException();
-	if (grade > lowest)
+	if (this->grade > lowest)
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
-	: name(other.name), grade(other.grade) {}
-
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
-{
-	if (this != &other)
-		grade = other.grade; // _name is const
-	return *this;
-}
-
+Bureaucrat::Bureaucrat() : name("Default"), grade(highest) {}
 Bureaucrat::~Bureaucrat() {}
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade) {}
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {if (this != &other) {grade = other.grade;} return *this;}
 
-// ------------------ Accessors ------------------
-const std::string &Bureaucrat::getName() const { return name; }
-int Bureaucrat::getGrade() const { return grade; }
+int Bureaucrat::getGrade() const {return (grade);}
+const std::string &Bureaucrat::getName() const {return (name);}
 
-// ------------------ Modifiers ------------------
-void Bureaucrat::incrementGrade()
-{
-	if (grade <= highest)
-		throw GradeTooHighException();
-	--grade;
-}
-
-void Bureaucrat::decrementGrade()
-{
-	if (grade >= lowest)
-		throw GradeTooLowException();
-	++grade;
-}
-
-// ------------------ Exceptions ------------------
-const char *Bureaucrat::GradeTooHighException::what() const throw()
-{
+const char *Bureaucrat::GradeTooHighException::what() const throw () {
 	return "Grade too high";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low";
+	return ("Grade too low");
 }
 
-// ------------------ Non-member operators ------------------
+void Bureaucrat::incrementGrade() {
+	if (grade <= highest)
+		throw GradeTooHighException();
+	--grade;
+}
+
+void Bureaucrat::decrementGrade() {
+	if (grade >= lowest)
+		throw GradeTooLowException();
+	++grade;
+}
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade();
-	return os; 
+	return os;
 }
-//the value return the address 
-//cout << "fgfg"
