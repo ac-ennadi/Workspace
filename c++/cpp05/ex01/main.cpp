@@ -1,59 +1,52 @@
-# include <iostream>
+#include <iostream>
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat valid("Alice", 42);
-        std::cout << valid << std::endl;
+        Bureaucrat bob("Bob", 5);
+        Form formA("A42", 10, 20);
+        std::cout << formA << std::endl;
+        bob.signForm(formA);
+        std::cout << formA << std::endl;
     }
-    catch (std::exception &e)
+    catch (const std::exception &e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
     try
     {
-        Bureaucrat lowest("Bob", 150);
-        std::cout << lowest << std::endl;
-        lowest.decrementGrade();
+        Bureaucrat low("Low", 100);
+        Form formB("B42", 50, 80);
+        low.signForm(formB);
     }
-    catch (std::exception &e)
+    catch (const std::exception &e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
     try
     {
-        Bureaucrat highest("Charlie", 1);
-        std::cout << highest << std::endl;
-        highest.incrementGrade();
+        Form invalid("C42", 0, 50);
+        std::cout << invalid << std::endl;
     }
-    catch (std::exception &e)
+    catch (const std::exception &e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
     try
     {
-        Bureaucrat invalidLow("Dan", 0);
-        std::cout << invalidLow << std::endl;
+        Form invalid2("D42", 50, 151);
+        std::cout << invalid2 << std::endl;
     }
-    catch (std::exception &e)
+    catch (const std::exception &e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    try
-    {
-        Bureaucrat invalidHigh("Eve", 151);
-        std::cout << invalidHigh << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Exception: " << e.what() << std::endl;
-    }
-
-    return (0);
+    return 0;
 }
